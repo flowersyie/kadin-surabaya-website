@@ -65,13 +65,24 @@ body:before {
 }
 
 .brand-title {
+  font-size: 1.15rem !important;
   letter-spacing: .08em !important;
   font-weight: 900 !important;
 }
 
-.brand-subtitle {
-  font-size: 10px !important;
-  letter-spacing: .14em !important;
+.header-root .brand-text {
+  min-width: 0;
+  width: max-content;
+}
+
+.header-root .brand-subtitle {
+  display: block;
+  width: 100%;
+  font-size: 8px !important;
+  letter-spacing: .02em !important;
+  line-height: 1.15;
+  white-space: nowrap;
+  text-align: right;
   text-transform: uppercase;
 }
 
