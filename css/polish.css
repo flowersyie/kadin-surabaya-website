@@ -5,6 +5,8 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 *:focus-visible{outline:3px solid #1261ff!important;outline-offset:3px;border-radius:4px}
 .sr-only:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;margin:0;clip:auto;padding:12px 16px;background:#0b1220;color:#fff;z-index:2000;border-radius:8px}
 .brand-anchor img{height:44px;width:auto;display:block;object-fit:contain;border-radius:6px}
+.header-root .brand-title{font-size:15px!important;white-space:nowrap!important}
+.header-root .brand-subtitle{margin-top:1px!important;font-size:7.12px!important;letter-spacing:.02em!important;text-align:left!important}
 .footer-root .brand-anchor img{background:#fff;padding:4px;border-radius:8px}
 .section-desc{margin-bottom:2.5rem}
 .section-title .serif-italic,.editorial-italic{font-family:var(--font-sans);font-style:italic;font-weight:500}
