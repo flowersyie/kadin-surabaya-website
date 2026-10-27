@@ -1,0 +1,1474 @@
+/* Lapisan rapi — dimuat terakhir */
+:root{--font-sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{font-family:var(--font-sans)!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+*:focus-visible{outline:3px solid #1261ff!important;outline-offset:3px;border-radius:4px}
+.sr-only:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;margin:0;clip:auto;padding:12px 16px;background:#0b1220;color:#fff;z-index:2000;border-radius:8px}
+.brand-anchor img{height:44px;width:auto;display:block;object-fit:contain;border-radius:6px}
+.footer-root .brand-anchor img{background:#fff;padding:4px;border-radius:8px}
+.section-desc{margin-bottom:2.5rem}
+.section-title .serif-italic,.editorial-italic{font-family:var(--font-sans);font-style:italic;font-weight:500}
+.agenda-arrow-btn{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;border-radius:50%;color:#1261ff;border:1px solid #dfe5ec}
+.agenda-arrow-btn:hover{background:#1261ff;color:#fff}
+.agenda-item-row{display:grid;grid-template-columns:80px minmax(0,1fr) 40px;align-items:center;gap:24px;min-height:172px;padding:24px!important;box-sizing:border-box}
+.agenda-date-box{width:80px;min-width:80px;margin-right:0}
+.agenda-info-wrap{min-width:0;padding-right:0}
+.agenda-meta-inline{gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.agenda-title{margin-bottom:6px}
+.agenda-action-wrap{width:40px;height:40px}
+.agenda-arrow-btn{width:40px;height:40px;min-width:40px;min-height:40px;flex:none}
+@media(max-width:640px){.agenda-item-row{grid-template-columns:minmax(0,1fr) 40px;gap:12px;min-height:0;padding:18px!important}.agenda-date-box{grid-column:1;flex-direction:row;align-items:baseline;gap:8px;width:auto;min-width:0;margin-bottom:0}.agenda-date-day{font-size:1.75rem}.agenda-info-wrap{grid-column:1 / -1;grid-row:2}.agenda-action-wrap{grid-column:2;grid-row:1;position:static;align-self:center}}
+.article-featured-image-frame{aspect-ratio:16/10;overflow:hidden;border-radius:16px;margin-bottom:1.25rem}
+.article-featured-image-frame img{transition:transform .5s ease}
+a:hover .article-featured-image-frame img{transform:scale(1.03)}
+.news-row-item{padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px solid #e5eaf0}
+.news-row-item:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.news-row-item h3{font-size:1.1rem;font-weight:700;margin:.35rem 0;line-height:1.3}
+.news-row-item p{font-size:.9rem;color:#475569;line-height:1.6}
+.source-note-modern{padding:18px 22px;line-height:1.7}
+@media print{.header-root,.footer-root,.mobile-menu-overlay{display:none!important}}
+.nav-list{flex-wrap:nowrap}.nav-item-link,.btn-premium{white-space:nowrap}
+.nav-wrapper{width:auto}.brand-wrapper{width:auto;min-width:230px}
+.article-featured-image-frame img{width:100%;height:100%;object-fit:cover}
+/* hero */
+.hero-root{min-height:0!important}
+.hero-layout{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;padding:72px 0 80px!important;gap:48px!important}
+.hero-content-cell,.hero-visual-cell{width:auto!important;display:block!important;max-width:none!important}
+.hero-main-heading{font-size:clamp(38px,4.6vw,64px)!important;line-height:1.04!important;letter-spacing:-.045em!important;max-width:none!important;margin-bottom:1.25rem}
+.hero-image-main-wrap{aspect-ratio:4/5;max-height:560px}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;padding:48px 0 56px!important}.hero-main-heading{font-size:clamp(34px,9vw,48px)!important}.hero-image-main-wrap{aspect-ratio:16/11}}
+.hero-root{padding:0!important}
+.hero-layout{padding:56px 0 72px!important}
+.hero-image-main-wrap{margin-left:0!important}
+
+/*AGENDA SINGLE PAGE*/
+
+#detail-agenda {
+    background: #fff;
+    padding: 80px 0 100px;
+    border-top: 1px solid #e5eaf0;
+}
+
+.agenda-modern-detail {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* LABEL ATAS */
+
+.agenda-modern-detail .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 14px;
+    margin-bottom: 24px;
+
+    background: #eef4ff;
+    border: 1px solid #d7e5ff;
+    border-radius: 999px;
+
+    color: #1261ff;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.agenda-modern-detail .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #1261ff;
+    border-radius: 50%;
+}
+
+/* JUDUL */
+
+.agenda-modern-detail h1 {
+    max-width: 950px;
+
+    margin: 0 0 22px !important;
+
+    color: #0b1220 !important;
+
+    font-size: clamp(46px, 5.5vw, 72px) !important;
+    font-weight: 800 !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.05em !important;
+}
+
+/* DESKRIPSI */
+
+.agenda-modern-detail .article-lead {
+    max-width: 850px;
+
+    margin: 0 0 45px !important;
+
+    color: #657184 !important;
+
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+}
+
+/* =====================================================
+   4 INFO
+===================================================== */
+
+.agenda-facts-modern {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+
+    margin: 0 0 65px !important;
+
+    background: #0e2347 !important;
+    border: none !important;
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+
+    box-shadow: 0 20px 50px rgba(14, 35, 71, .15) !important;
+}
+
+.agenda-facts-modern > div {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+    min-height: 145px !important;
+
+    padding: 27px 25px !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    border-right: 1px solid rgba(255,255,255,.12) !important;
+}
+
+.agenda-facts-modern > div:last-child {
+    border-right: none !important;
+}
+
+/* LABEL */
+
+.agenda-facts-modern span {
+    display: block !important;
+
+    margin: 0 0 13px !important;
+
+    color: #8eadd8 !important;
+
+    font-size: 10px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: .13em !important;
+    text-transform: uppercase !important;
+}
+
+/* ISI */
+
+.agenda-facts-modern strong {
+    display: block !important;
+
+    color: #ffffff !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.55 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* GARIS BIRU */
+
+.agenda-facts-modern > div::before {
+    content: "";
+
+    display: block;
+
+    width: 32px;
+    height: 3px;
+
+    margin-bottom: 18px;
+
+    background: #4d91ff;
+    border-radius: 99px;
+}
+
+/* =====================================================
+   RINGKASAN
+===================================================== */
+
+.agenda-modern-body {
+    max-width: 850px !important;
+
+    margin: 0 !important;
+    padding: 0 0 0 30px !important;
+
+    border-left: 3px solid #1261ff !important;
+}
+
+.agenda-modern-body::before {
+    content: none !important;
+}
+
+.agenda-modern-body h2 {
+    margin: 0 0 22px !important;
+
+    color: #0b1220 !important;
+
+    font-size: 34px !important;
+    font-weight: 800 !important;
+
+    line-height: 1.15 !important;
+    letter-spacing: -.035em !important;
+}
+
+.agenda-modern-body p {
+    margin: 0 0 18px !important;
+
+    color: #475569 !important;
+
+    font-size: 16px !important;
+    line-height: 1.85 !important;
+}
+
+/* =====================================================
+   TOMBOL SUMBER
+===================================================== */
+
+.modern-source-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-top: 28px !important;
+
+    padding: 14px 22px !important;
+
+    background: #0b1220 !important;
+    color: #fff !important;
+
+    border: 0 !important;
+    border-radius: 10px !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+
+    transition: .2s ease !important;
+}
+
+.modern-source-button:hover {
+    background: #1261ff !important;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .agenda-facts-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .agenda-facts-modern > div {
+        border-bottom: 1px solid rgba(255,255,255,.12) !important;
+    }
+
+}
+
+/* =====================================================
+   HP
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #detail-agenda {
+        padding: 55px 0 70px;
+    }
+
+    .agenda-modern-detail {
+        width: calc(100% - 30px);
+    }
+
+    .agenda-modern-detail h1 {
+        font-size: 40px !important;
+    }
+
+    .agenda-modern-detail .article-lead {
+        font-size: 15px !important;
+    }
+
+    .agenda-facts-modern {
+        grid-template-columns: 1fr !important;
+    }
+
+    .agenda-facts-modern > div {
+        min-height: auto !important;
+
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,.12) !important;
+    }
+
+    .agenda-facts-modern > div:last-child {
+        border-bottom: none !important;
+    }
+
+    .agenda-modern-body {
+        padding-left: 20px !important;
+    }
+
+    .agenda-modern-body h2 {
+        font-size: 28px !important;
+    }
+
+    .modern-source-button {
+        width: 100% !important;
+    }
+
+}
+/*NAVBAR ACTIVE - CLEAN UNDERLINE */
+
+/* Navbar */
+.nav-item-link {
+    position: relative;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* Menu aktif */
+.nav-item-link.active,
+.nav-item-link[aria-current="page"] {
+    background: transparent !important;
+    color: #c7a36a !important;
+}
+
+/* Garis bawah menu aktif */
+.nav-item-link.active::after,
+.nav-item-link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+
+    height: 2px;
+    background: #c7a36a;
+}
+
+/* Hover */
+.nav-item-link:hover {
+    background: transparent !important;
+    color: #c7a36a !important;
+}
+
+/* ===== Paginasi Berita ===== */
+.bcard[hidden] { display: none !important; }
+
+.news-pagination { padding: 3rem 0 5rem; }
+.news-pagination-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(15, 23, 42, .08);
+    padding-top: 3rem;
+}
+.news-pagination-info { margin: 0; font-size: 1rem; color: var(--slate-700, #334155); }
+.news-pagination-info strong { color: #0f172a; font-weight: 700; }
+.news-pagination-nav { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+
+.page-btn {
+    font: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #0f172a;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, .06);
+    border-radius: 12px;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 .9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+    transition: background .15s, color .15s, border-color .15s;
+}
+.page-btn:hover:not(:disabled):not(.is-active) { border-color: #0e2347; background: #f1f5f9; }
+.page-btn.is-active { background: #0a2540; color: #fff; border-color: #0a2540; cursor: default; }
+.page-btn:disabled { opacity: .4; cursor: not-allowed; }
+.page-btn:focus-visible { outline: 3px solid #c9a24b; outline-offset: 2px; }
+
+@media (max-width: 640px) {
+    .news-pagination { padding: 2rem 0 3.5rem; }
+    .news-pagination-inner { justify-content: center; text-align: center; padding-top: 2rem; }
+    .page-btn { min-width: 42px; height: 42px; font-size: .95rem; padding: 0 .7rem; }
+}
+
+/* =========================================================
+   KADIN SURABAYA — UNIFIED NAVY & GOLD THEME
+   Tempel PALING BAWAH CSS
+========================================================= */
+
+:root {
+    --du-ink: #0b1220;
+    --du-navy: #0e2347;
+
+    /* aksen utama */
+    --du-blue: #c7a36a;
+    --du-cyan: #d8bd91;
+    --du-gold: #c7a36a;
+
+    /* background */
+    --du-paper: #f7f5f1;
+    --du-card: #ffffff;
+
+    /* border & text */
+    --du-line: #e4ded4;
+    --du-muted: #667085;
+
+    --du-radius: 16px;
+    --du-shadow: 0 18px 45px rgba(14, 35, 71, .10);
+
+    --theme-navy: #0e2347;
+    --theme-gold: #c7a36a;
+    --theme-gold-soft: #f4ede3;
+    --theme-paper: #f7f5f1;
+    --theme-white: #ffffff;
+}
+
+/* =========================================================
+   BODY / BACKGROUND
+========================================================= */
+
+body {
+    background: var(--theme-paper) !important;
+    color: var(--du-ink) !important;
+}
+
+body::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(199,163,106,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(199,163,106,.035) 1px,
+            transparent 1px
+        ) !important;
+
+    background-size: 48px 48px !important;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.header-root {
+    background: rgba(255,255,255,.96) !important;
+    border-bottom: 1px solid #ebe5dc !important;
+
+    box-shadow:
+        0 5px 20px rgba(14,35,71,.05) !important;
+}
+
+/* menu biasa */
+
+.nav-item-link {
+    background: transparent !important;
+    color: var(--theme-navy) !important;
+}
+
+/* hover */
+
+.nav-item-link:hover {
+    background: transparent !important;
+    color: var(--theme-gold) !important;
+}
+
+/* menu aktif */
+
+.nav-item-link.active,
+.nav-item-link.is-active,
+.nav-item-link[aria-current="page"] {
+    background: transparent !important;
+    color: var(--theme-gold) !important;
+}
+
+/* underline */
+
+.nav-item-link.active::after,
+.nav-item-link.is-active::after,
+.nav-item-link[aria-current="page"]::after {
+    background: var(--theme-gold) !important;
+}
+
+.nav-list {
+    align-items: center !important;
+}
+
+.nav-item-link {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+
+    height: 48px !important;
+    padding: 0 12px !important;
+
+    line-height: 1 !important;
+}
+
+/* Garis bawah */
+.nav-item-link::after,
+.nav-item-link.active::after,
+.nav-item-link.is-active::after,
+.nav-item-link[aria-current="page"]::after {
+    bottom: 0 !important;
+    height: 2px !important;
+}
+
+/* Aktif */
+.nav-item-link.active::after,
+.nav-item-link.is-active::after,
+.nav-item-link[aria-current="page"]::after {
+    background: #c7a36a !important;
+}
+
+/* =========================================================
+   REGISTRASI ANGGOTA
+========================================================= */
+
+.header-root .btn-premium.primary {
+    background: var(--theme-navy) !important;
+    border-color: var(--theme-navy) !important;
+    color: #fff !important;
+}
+
+.header-root .btn-premium.primary:hover {
+    background: var(--theme-gold) !important;
+    border-color: var(--theme-gold) !important;
+    color: #fff !important;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-root {
+    background: var(--theme-navy) !important;
+}
+
+/* lingkaran dekorasi */
+
+.hero-root::after {
+    border-color: rgba(199,163,106,.20) !important;
+
+    box-shadow:
+        0 0 0 55px rgba(199,163,106,.035),
+        0 0 0 110px rgba(199,163,106,.02) !important;
+}
+
+/* badge hero */
+
+.hero-tagline-wrap {
+    background: rgba(255,255,255,.96) !important;
+    border: 1px solid rgba(199,163,106,.35) !important;
+}
+
+.hero-tagline-text {
+    color: var(--theme-gold) !important;
+}
+
+.hero-tagline-dot {
+    background: var(--theme-gold) !important;
+}
+
+/* judul */
+
+.hero-main-heading {
+    color: #fff !important;
+}
+
+/* tulisan italic */
+
+.editorial-italic,
+.hero-main-heading .editorial-italic {
+    color: #d7b77f !important;
+}
+
+/* deskripsi */
+
+.hero-description {
+    color: #c8d1df !important;
+}
+
+/* frame gambar */
+
+.hero-frame-container {
+    border-color: rgba(199,163,106,.30) !important;
+
+    background:
+        rgba(255,255,255,.05) !important;
+}
+
+/* floating card */
+
+.hero-card-floating {
+    border-left: 4px solid var(--theme-gold) !important;
+}
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.hero-root .btn-premium.primary {
+    background: var(--theme-gold) !important;
+    border-color: var(--theme-gold) !important;
+    color: var(--theme-navy) !important;
+}
+
+.hero-root .btn-premium.primary:hover {
+    background: #fff !important;
+    border-color: #fff !important;
+    color: var(--theme-navy) !important;
+}
+
+.hero-root .btn-premium.secondary {
+    background: transparent !important;
+
+    border:
+        1px solid rgba(255,255,255,.35) !important;
+
+    color: #fff !important;
+}
+
+.hero-root .btn-premium.secondary:hover {
+    background: var(--theme-gold) !important;
+    border-color: var(--theme-gold) !important;
+    color: var(--theme-navy) !important;
+}
+
+.cta-root {
+    padding: 80px 0 !important;
+}
+
+.cta-panel {
+    min-height: 440px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 60px 80px !important;
+}
+
+.cta-panel-layout {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.5fr) auto !important;
+
+    align-items: center !important;
+    gap: 70px !important;
+}
+
+/* Bagian teks */
+.cta-text-cell {
+    align-self: center !important;
+}
+
+.cta-title {
+    margin-top: 0 !important;
+}
+
+.cta-desc {
+    margin-bottom: 0 !important;
+}
+
+/* Tombol kanan benar-benar di tengah */
+.cta-panel-layout > .btn-premium {
+    align-self: center !important;
+    justify-self: center !important;
+
+    margin: 0 !important;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .cta-panel {
+        min-height: auto !important;
+        padding: 50px 40px !important;
+    }
+
+    .cta-panel-layout {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    .cta-panel-layout > .btn-premium {
+        justify-self: start !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cta-root {
+        padding: 55px 0 !important;
+    }
+
+    .cta-panel {
+        padding: 38px 25px !important;
+    }
+
+    .cta-panel-layout > .btn-premium {
+        width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+/* =========================================================
+   STAT / PULSE
+========================================================= */
+
+.pulse-root {
+    background: #fff !important;
+}
+
+.pulse-number {
+    color: var(--theme-gold) !important;
+}
+
+.pulse-label {
+    color: var(--theme-navy) !important;
+}
+
+.pulse-cell {
+    border-color: #e7dfd4 !important;
+}
+
+/* =========================================================
+   HISTORY / ORGANIZATION TIMELINE
+========================================================= */
+
+.history-root {
+    padding: 92px 0;
+    background: var(--slate-50);
+    border-bottom: 1px solid var(--du-line);
+}
+
+.history-intro {
+    margin-bottom: 48px;
+}
+
+.history-intro .section-desc {
+    max-width: 850px;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    gap: 48px;
+}
+
+.history-subtitle {
+    margin: 0 0 24px;
+    color: var(--theme-navy);
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.history-leadership-list,
+.history-office-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.history-leadership-item,
+.history-office-item {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--du-line);
+}
+
+.history-period {
+    color: var(--theme-gold);
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.history-leadership-item h4 {
+    margin: 0 0 5px;
+    color: var(--theme-navy);
+    font-size: 1rem;
+}
+
+.history-leadership-item p,
+.history-office-item p {
+    margin: 0;
+    color: var(--du-muted);
+    line-height: 1.7;
+}
+
+.leader-profile-copy h4 {
+    margin: 1.5rem 0 0.6rem;
+    color: var(--theme-navy);
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.leader-profile-copy h4:first-child {
+    margin-top: 0;
+}
+
+.leader-profile-copy p,
+.leader-profile-list {
+    color: var(--slate-700);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.leader-profile-copy p {
+    margin: 0 0 0.9rem;
+}
+
+.leader-profile-editorial {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    padding: clamp(24px, 5vw, 52px);
+    border: 1px solid var(--du-line);
+    border-radius: 16px;
+    background: var(--white);
+    color: var(--slate-700);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.leader-profile-editorial > h3 {
+    margin: 0 0 1.25rem;
+    color: var(--theme-navy);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.25;
+}
+
+.leader-profile-editorial h4 {
+    margin: 2rem 0 0.75rem;
+    color: var(--theme-navy);
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.leader-profile-editorial p {
+    margin: 0 0 1rem;
+}
+
+.leader-profile-editorial .leader-profile-quote {
+    margin: 0 0 1rem;
+}
+
+.leader-profile-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+.leader-profile-list li {
+    padding-left: 0.25rem;
+}
+
+.leader-profile-quote {
+    margin: 0 0 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--theme-gold);
+    color: var(--slate-800);
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .history-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .history-root {
+        padding: 65px 0;
+    }
+
+    .history-leadership-item,
+    .history-office-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 17px 0;
+    }
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section-kicker {
+    color: var(--theme-gold) !important;
+}
+
+.section-title {
+    color: var(--theme-navy) !important;
+}
+
+.section-title .serif-italic {
+    color: var(--theme-gold) !important;
+}
+
+.section-desc {
+    color: var(--du-muted) !important;
+}
+
+/* =========================================================
+   BENTO / LAYANAN
+========================================================= */
+
+.bento-cell {
+    background: #fff !important;
+    border-color: #e6e0d7 !important;
+}
+
+/* garis kiri */
+
+.bento-cell::before {
+    background:
+        linear-gradient(
+            var(--theme-navy),
+            var(--theme-gold)
+        ) !important;
+}
+
+.bento-cell:hover {
+    border-color: #d8c6a8 !important;
+
+    box-shadow:
+        0 18px 45px rgba(14,35,71,.10) !important;
+}
+
+.bento-headline {
+    color: var(--theme-navy) !important;
+}
+
+.bento-icon-wrapper {
+    background: var(--theme-gold-soft) !important;
+    border-color: #e5d6c0 !important;
+    color: var(--theme-navy) !important;
+}
+
+.bento-action-link {
+    color: var(--theme-navy) !important;
+}
+
+.bento-action-link:hover {
+    color: var(--theme-gold) !important;
+}
+
+/* =========================================================
+   AGENDA
+========================================================= */
+
+.agenda-root {
+    background: #f2eee8 !important;
+}
+
+.agenda-flagship-card {
+    background: var(--theme-navy) !important;
+}
+
+.flagship-badge {
+    color: #dfc493 !important;
+}
+
+.flagship-title {
+    color: #fff !important;
+}
+
+.flagship-meta {
+    color: #c9d3e1 !important;
+}
+
+/* timeline */
+
+.timeline-container {
+    border-left-color: #d8c6aa !important;
+}
+
+/* agenda card */
+
+.agenda-item-row {
+    background: #fff !important;
+    border-color: #e5ded4 !important;
+}
+
+.agenda-item-row:hover {
+    border-color: #d1b88e !important;
+}
+
+/* tanggal */
+
+.agenda-date-box {
+    background: var(--theme-gold-soft) !important;
+}
+
+.agenda-date-day {
+    color: var(--theme-navy) !important;
+}
+
+.agenda-date-month {
+    color: var(--theme-gold) !important;
+}
+
+/* kategori */
+
+.agenda-category-tag {
+    background: var(--theme-gold-soft) !important;
+    color: #967345 !important;
+}
+
+/* arrow */
+
+.agenda-arrow-btn {
+    border-color: #ddd4c7 !important;
+    color: var(--theme-navy) !important;
+}
+
+.agenda-arrow-btn::before {
+    color: var(--theme-navy) !important;
+}
+
+.agenda-item-row:hover .agenda-arrow-btn,
+.agenda-arrow-btn:hover {
+    background: var(--theme-gold) !important;
+    border-color: var(--theme-gold) !important;
+}
+
+.agenda-item-row:hover .agenda-arrow-btn::before,
+.agenda-arrow-btn:hover::before {
+    color: #fff !important;
+}
+
+/* =========================================================
+   AGENDA DETAIL
+========================================================= */
+
+.agenda-modern-detail .eyebrow {
+    background: var(--theme-gold-soft) !important;
+    border-color: #e5d5bd !important;
+    color: #9b7543 !important;
+}
+
+.agenda-modern-detail .eyebrow::before {
+    background: var(--theme-gold) !important;
+}
+
+.agenda-facts-modern {
+    background: var(--theme-navy) !important;
+}
+
+.agenda-facts-modern span {
+    color: #d6bb8c !important;
+}
+
+.agenda-facts-modern > div::before {
+    background: var(--theme-gold) !important;
+}
+
+.agenda-modern-body {
+    border-left-color: var(--theme-gold) !important;
+}
+
+.modern-source-button {
+    background: var(--theme-navy) !important;
+    border-color: var(--theme-navy) !important;
+    color: #fff !important;
+}
+
+.modern-source-button:hover {
+    background: var(--theme-gold) !important;
+    border-color: var(--theme-gold) !important;
+    color: #fff !important;
+
+    box-shadow:
+        0 10px 25px rgba(199,163,106,.20) !important;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+*:focus-visible {
+    outline-color: var(--theme-gold) !important;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-root {
+    background: var(--theme-navy) !important;
+}
+
+.footer-root .footer-link:hover {
+    color: var(--theme-gold) !important;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .mobile-menu-overlay {
+        background: #fff !important;
+    }
+
+    .mobile-menu-overlay .nav-item-link {
+        color: var(--theme-navy) !important;
+        background: transparent !important;
+    }
+
+    .mobile-menu-overlay .nav-item-link:hover,
+    .mobile-menu-overlay .nav-item-link.active,
+    .mobile-menu-overlay .nav-item-link.is-active,
+    .mobile-menu-overlay .nav-item-link[aria-current="page"] {
+        color: var(--theme-gold) !important;
+        background: transparent !important;
+    }
+
+    .mobile-menu-overlay .btn-premium {
+        background: var(--theme-navy) !important;
+        border-color: var(--theme-navy) !important;
+        color: #fff !important;
+    }
+
+    .mobile-menu-overlay .btn-premium:hover {
+        background: var(--theme-gold) !important;
+        border-color: var(--theme-gold) !important;
+    }
+}
+
+/* =========================================
+   REGISTRASI ANGGOTA - DESKTOP
+========================================= */
+
+.header-root .btn-premium {
+    background: #0e2347 !important;
+    border-color: #0e2347 !important;
+    color: #ffffff !important;
+    transition: all .25s ease;
+}
+
+.header-root .btn-premium:hover {
+    background: #c7a36a !important;
+    border-color: #c7a36a !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/*REGISTRASI ANGGOTA - MOBILE*/
+
+.mobile-menu-overlay .btn-premium,
+.mobile-menu-overlay .mobile-cta,
+.mobile-nav .btn-premium {
+    background: #0e2347 !important;
+    border-color: #0e2347 !important;
+    color: #ffffff !important;
+}
+
+.mobile-menu-overlay .btn-premium:hover,
+.mobile-menu-overlay .mobile-cta:hover,
+.mobile-nav .btn-premium:hover {
+    background: #c7a36a !important;
+    border-color: #c7a36a !important;
+    color: #ffffff !important;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .mobile-menu-overlay .btn-premium,
+    .mobile-menu-overlay .mobile-cta,
+    .mobile-nav .btn-premium {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+
+        background: #0e2347 !important;
+        color: #ffffff !important;
+
+        border: 1px solid #0e2347 !important;
+        border-radius: 10px;
+    }
+}
+
+/* =========================================================
+   GLOBAL BUTTON SYSTEM — KADIN SURABAYA
+   Navy + Gold
+========================================================= */
+
+:root {
+    --btn-navy: #0e2347;
+    --btn-navy-hover: #162f5c;
+    --btn-gold: #c7a36a;
+    --btn-white: #ffffff;
+}
+
+.btn-premium,
+.modern-source-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 46px;
+
+    border-radius: 10px !important;
+
+    font-weight: 700 !important;
+    text-decoration: none !important;
+
+    transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease !important;
+}
+
+.btn-premium.primary,
+.modern-source-button {
+    background: var(--btn-navy) !important;
+    border: 1px solid var(--btn-navy) !important;
+    color: var(--btn-white) !important;
+
+    box-shadow: none !important;
+}
+
+.btn-premium.primary:hover,
+.modern-source-button:hover {
+    background: var(--btn-gold) !important;
+    border-color: var(--btn-gold) !important;
+    color: var(--btn-white) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(199, 163, 106, .22) !important;
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+   Contoh: Layanan Advokasi
+========================================================= */
+
+.btn-premium.secondary {
+    background: transparent !important;
+
+    border: 1px solid rgba(255,255,255,.30) !important;
+
+    color: var(--btn-white) !important;
+
+    box-shadow: none !important;
+}
+
+/* SECONDARY HOVER */
+
+.btn-premium.secondary:hover {
+    background: var(--btn-gold) !important;
+    border-color: var(--btn-gold) !important;
+    color: var(--btn-white) !important;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   AGENDA ARROW BUTTON
+========================================================= */
+
+.agenda-arrow-btn {
+    background: transparent !important;
+
+    border: 1px solid #d9e0e8 !important;
+
+    color: var(--btn-navy) !important;
+
+    transition: all .25s ease !important;
+}
+
+.agenda-arrow-btn::before {
+    color: var(--btn-navy) !important;
+}
+
+/* HOVER AGENDA */
+
+.agenda-item-row:hover .agenda-arrow-btn,
+.agenda-arrow-btn:hover {
+    background: var(--btn-gold) !important;
+    border-color: var(--btn-gold) !important;
+
+    transform: translateX(3px);
+}
+
+.agenda-item-row:hover .agenda-arrow-btn::before,
+.agenda-arrow-btn:hover::before {
+    color: var(--btn-white) !important;
+}
+
+.bento-action-link {
+    color: var(--btn-navy) !important;
+    font-weight: 700 !important;
+    transition: color .2s ease !important;
+}
+
+.bento-action-link:hover {
+    color: var(--btn-gold) !important;
+}
+
+/* =========================================================
+   HERO KHUSUS BACKGROUND NAVY
+========================================================= */
+
+.hero-root .btn-premium.primary {
+    background: var(--btn-gold) !important;
+    border-color: var(--btn-gold) !important;
+    color: var(--btn-navy) !important;
+}
+
+.hero-root .btn-premium.primary:hover {
+    background: var(--btn-white) !important;
+    border-color: var(--btn-white) !important;
+    color: var(--btn-navy) !important;
+}
+
+/* =========================================================
+   HEADER — REGISTRASI ANGGOTA
+========================================================= */
+
+.header-root .btn-premium.primary {
+    background: var(--btn-navy) !important;
+    border-color: var(--btn-navy) !important;
+    color: var(--btn-white) !important;
+}
+
+.header-root .btn-premium.primary:hover {
+    background: var(--btn-gold) !important;
+    border-color: var(--btn-gold) !important;
+    color: var(--btn-white) !important;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .mobile-menu-overlay .btn-premium,
+    .mobile-nav .btn-premium {
+        width: 100% !important;
+
+        background: var(--btn-navy) !important;
+        border: 1px solid var(--btn-navy) !important;
+
+        color: var(--btn-white) !important;
+
+        text-align: center;
+        justify-content: center;
+
+        border-radius: 10px !important;
+    }
+
+    .mobile-menu-overlay .btn-premium:hover,
+    .mobile-nav .btn-premium:hover {
+        background: var(--btn-gold) !important;
+        border-color: var(--btn-gold) !important;
+        color: var(--btn-white) !important;
+    }
+}
+
+/* =========================================================
+   MOBILE FULL WIDTH BUTTON
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .modern-source-button {
+        width: 100% !important;
+    }
+
+}
+
+/* ==========================================================
+   FIX KONTRAS FOOTER (latar navy)
+   Tempel di PALING BAWAH css/polish.css
+   ========================================================== */
+
+/* Logo & nama brand di footer */
+.footer-root .brand-title {
+  color: #ffffff !important;
+}
+.footer-root .brand-subtitle {
+  color: #e6c987 !important;   /* emas terang, jelas di atas navy */
+  opacity: 1 !important;
+}
+
+/* Deskripsi & teks paragraf footer */
+.footer-root .footer-brand-desc,
+.footer-root .footer-column p,
+.footer-root .footer-bottom-bar,
+.footer-root .footer-bottom-bar div {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Judul kolom */
+.footer-root .footer-heading {
+  color: #ffffff !important;
+}
+
+/* Nama sekretariat (sebelumnya navy di atas navy) */
+.footer-root .footer-column p[style*="navy-primary"] {
+  color: #ffffff !important;
+}
+
+/* Email & telepon */
+.footer-root a[href^="mailto:"],
+.footer-root a[href^="tel:"] {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.footer-root div[style*="slate-700"] {
+  color: #ffffff !important;
+}
+
+/* Link navigasi & sosial */
+.footer-root .footer-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.footer-root .footer-link:hover,
+.footer-root a[href^="mailto:"]:hover,
+.footer-root a[href^="tel:"]:hover {
+  color: #e6c987 !important;
+}

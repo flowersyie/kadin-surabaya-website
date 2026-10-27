@@ -1,0 +1,33 @@
+/* Halaman detail agenda: tipografi isi, daftar, catatan, tombol sumber */
+.agenda-modern-detail { padding: clamp(56px, 8vw, 88px) 20px 56px !important; }
+.agenda-modern-detail .article-lead { max-width: 760px; font-size: clamp(1.02rem, 1.6vw, 1.18rem) !important; }
+.agenda-modern-detail .agenda-facts-modern { margin: 36px 0 48px !important; }
+.agenda-modern-detail .agenda-facts-modern strong { overflow-wrap: anywhere; }
+
+.agenda-modern-body { max-width: 760px !important; padding: 0 0 0 clamp(18px, 3vw, 32px) !important; border-left: 3px solid var(--gold-accent, #c7a36a) !important; }
+.agenda-modern-body h2 {
+  margin: 44px 0 14px !important; font-size: clamp(1.3rem, 2.4vw, 1.65rem) !important;
+  line-height: 1.25 !important; letter-spacing: -.02em !important; color: #0e2347 !important;
+}
+.agenda-modern-body h2:first-child { margin-top: 0 !important; }
+.agenda-modern-body p { font-size: 1rem !important; line-height: 1.85 !important; margin: 0 0 16px !important; }
+.agenda-modern-body ul { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
+.agenda-modern-body li { position: relative; padding-left: 22px; color: #475569; line-height: 1.75; }
+.agenda-modern-body li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-accent, #c7a36a); }
+.agenda-modern-body li strong { color: #0e2347; }
+
+.agenda-note {
+  margin: 40px 0 0; padding: 16px 20px; border-left: 3px solid var(--gold-accent, #c7a36a);
+  border-radius: 0 10px 10px 0; background: #fff; color: #334155; font-size: .94rem; line-height: 1.7;
+}
+.agenda-note strong { color: #0e2347; }
+
+.agenda-sources { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.agenda-sources .modern-source-button { margin: 0 !important; }
+.agenda-back { display: inline-block; margin-top: 28px; color: #0e2347; font-weight: 700; font-size: .92rem; }
+.agenda-back:hover { color: var(--gold-accent, #c7a36a); }
+
+@media (max-width: 640px) {
+  .agenda-sources { flex-direction: column; }
+  .agenda-sources .modern-source-button { width: 100%; }
+}
