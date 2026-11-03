@@ -150,6 +150,8 @@
   .pf-people-partners{grid-template-columns:1fr}
   .pf-jump{flex-wrap:nowrap;overflow-x:auto;margin-right:calc(var(--gutter,1.5rem)*-1);padding-right:var(--gutter,1.5rem);scrollbar-width:none}
   .pf-jump a{white-space:nowrap}
+  .pf-chair-card{display:block}
+  .pf-photo-lg{aspect-ratio:4/5}
 }
 @media(prefers-reduced-motion:reduce){.pf-person,.pf-partner,.pf-jump a{transition:none}.pf-person:hover,.pf-partner:hover{transform:none}}
 
