@@ -118,7 +118,7 @@ body.page-layanan:before { display: none !important; }
 .page-layanan .lay-cta { background: var(--kj-navy); text-align: center; padding: clamp(48px, 7vw, 80px) 20px !important; }
 .page-layanan .lay-cta h2 { font-family: var(--font-sans); color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.3rem); max-width: 720px; margin: 0 auto 14px; line-height: 1.25; }
 .page-layanan .lay-cta p { max-width: 640px; margin: 0 auto 26px; color: rgba(255,255,255,.78); line-height: 1.75; }
-.page-layanan .lay-cta .btn-premium.primary { background: var(--kj-gold) !important; color: var(--kj-navy) !important; border-color: var(--kj-gold) !important; padding: .85rem 1.8rem; font-size: .95rem; }
+.page-layanan .lay-cta .btn-premium.primary { display: flex; width: fit-content; max-width: 100%; justify-content: center; box-sizing: border-box; margin: 0 auto; background: var(--kj-gold) !important; color: var(--kj-navy) !important; border-color: var(--kj-gold) !important; padding: .85rem 1.8rem; font-size: .95rem; }
 .page-layanan .lay-cta .btn-premium.primary:hover { background: #fff !important; border-color: #fff !important; }
 
 /* ---------- Responsif ---------- */
@@ -138,6 +138,7 @@ body.page-layanan:before { display: none !important; }
   .page-layanan .svc-extra-grid { grid-template-columns: 1fr; }
   .page-layanan .svc-card { padding: 22px; }
   .page-layanan .svc-btn { width: 100%; justify-content: center; }
+  .page-layanan .lay-cta .btn-premium.primary { width: 100%; max-width: 480px; }
 }
 @media (prefers-reduced-motion: reduce) { .page-layanan .svc-card { transition: none; } .page-layanan .svc-card:hover { transform: none; } }
 /* ---------- Label daftar layanan & tabel layanan tambahan ---------- */
